@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 40px 90px;
+  }
+  
+
+.menu a{
+text-decoration:none ;
+color: white;
+margin: 20px;
+font-size: 20px;
+font-family: "Playwrite IT Moderna", cursive;
+transition: color 0.2s;
+&:hover{
+  color: #1e2341;
+}
+}
+  .signup {
+    text-align: center;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 22px; 
+    font-weight: bold;
+    text-decoration: none; 
+    color: #ffffff; 
+    transition: color 0.2s, transform 0.3s; 
+    display: inline-block;
+    
+    &:hover {
+      color: #1e2341; 
+     font-size: 23px;
+     transform: scale(0.9); 
+     background-color: rgba(255, 255, 255, 0.473);
+     width: 160px;
+     height: 43px;
+     text-align: center;
+     border-radius: 30px;
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    .container {
+      font-size: 18px;
+    padding: 12px 25px;
+    }
+  
+    .logo img {
+      height: 30px; 
+    }
+  
+    .signup {
+      font-size: 16px; 
+    }
+  }
+  

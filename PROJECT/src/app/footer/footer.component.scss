@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+.container{
+    margin: 80px;
+}
+h1{
+    color: #1e2341;
+    font-family:Montserrat,sans-serif ;
+}
+.footer-ul{
+ list-style-type: none;
+
+}
+.footer-ul li a{
+text-decoration: none;
+color: #445094;
+font-size: 20px;
+font-weight: 600;
+font-family:Montserrat,sans-serif ;
+transition: color 0.3s;
+
+}
+.footer-ul li a:hover{
+    color: black;
+}
+.ul-div{
+    display: flex;
+    flex-wrap: wrap;
+}

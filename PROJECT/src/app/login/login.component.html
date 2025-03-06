@@ -1,0 +1,18 @@
+<div class="container">
+<div class="login-container"><h2>Login</h2>
+<form (submit)="onLogin()">
+  
+  <div>
+    <label for="email"></label>
+    <input id="email" type="email" placeholder="Email" class="input" [(ngModel)]="loginEmail" name="email" required>
+  </div>
+<br>
+  <div>
+    <label for="password"></label>
+    <input id="password" placeholder="Password" class="input" [(ngModel)]="loginPassword" name="password" required>
+  </div>
+<br>
+  <button type="submit" [disabled]="!loginEmail || !loginPassword">Login</button>
+</form>
+
+</div></div>

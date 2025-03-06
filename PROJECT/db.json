@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Ani",
+      "email": "animagaria@gmail.com",
+      "password": "vaime123"
+    },
+    {
+      "id": "7ac5",
+      "username": "ani",
+      "email": "ani@gmail.com",
+      "password": "blablabla"
+    },
+    {
+      "id": "0e89",
+      "email": "ani@gmail.com",
+      "password": "blabla"
+    },
+    {
+      "id": "eeeb",
+      "email": "ani@gmail.com",
+      "password": "blabla"
+    },
+    {
+      "id": "ab79",
+      "username": "bla1",
+      "email": "bla@gmail.com",
+      "password": "blabla12"
+    },
+    {
+      "id": "05ac",
+      "email": "bla1",
+      "password": "blabla12"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0px 120px;
+    gap: 30px;
+    margin: 100px;
+
+}
+.container{
+margin: 150px 20px;
+text-align: center;
+
+
+}h1{
+  color: white;
+  font-size: 40px;
+  font-family: "Playwrite IT Moderna", cursive;
+}
+.search-container{
+  display: flex;
+  justify-content: center;
+ 
+  
+}
+.input-t{
+  width: 500px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.527);
+  border: 1px solid white;
+  padding-left: 20px; 
+  font-size: 15px;
+  font-weight: 600;
+  font-family:Montserrat,sans-serif ;
+
+  &:hover {
+    filter: brightness(70%);
+    transition: filter 0.2s ease-in-out;
+    } 
+    
+    &:focus {
+      
+    border-color: #5596e0; 
+    outline: none; 
+  }
+    
+  
+}
+li a{
+  text-align: left;
+    height: 280px;
+    width: 320px;
+    border: 1px ;
+    border-radius: 16px;
+    display: flex;
+    margin : 20px 50px;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.527);
+    flex: 1 1 calc(33.33% - 20px);
+
+&:hover {
+    filter: brightness(70%);
+    transition: filter 0.2s ease-in-out;
+    }
+}
+.search {
+    margin: 20px auto;
+    text-align: center;
+  
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        border-color: #4caf50;
+      }
+    }
+  }
+
+.show-more-btn{
+  font-family:Montserrat,sans-serif ;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  color: white;
+  border-radius: 25px;
+  border: 1px solid rgb(117, 117, 241);
+  transition: 0.3s;
+  background-color: rgb(117, 117, 241);
+  &:hover{
+    background: white;
+    color:rgb(117, 117, 241);
+    font-weight: 600;
+  }
+}
+.content{
+font-family: Montserrat,sans-serif;
+padding: 20px 40px;
+color: white;
+font-size: 22px;
+
+
+} 
+
+.price{
+    margin-top: 10px;
+    text-decoration: none;
+}

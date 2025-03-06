@@ -1,0 +1,26 @@
+
+
+<header class="container">
+
+
+
+
+    <div class="logo"> 
+      <div class="menu">
+      <a href="" routeLink="/home" class="home">home</a> 
+      <a href="" routerLink="/favorite" class="m-fav">favorite</a>
+    </div>
+     <img src="public/logo.jpg" alt="">
+    </div>
+   
+    <a *ngIf="!isLoggedIn" class="signup" routerLink="/register">Sign Up</a>
+    <li *ngIf="isLoggedIn"><button (click)="logout()">Logout</button></li>
+  </header>
+  
+
+
+
+
+
+
+

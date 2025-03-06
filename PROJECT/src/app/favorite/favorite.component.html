@@ -1,0 +1,20 @@
+<div class="container">
+
+    <ul>
+      <li *ngFor="let game of favoriteGames">
+        <img [src]="game.imageUrl" alt="{{ game.name }}">
+        <div class="content">
+          <div class="name">{{ game.name }}</div>
+          <div class="price">
+            <span>{{ game.price | currency }}</span>
+          </div>
+          <button (click)="removeFromFavorites(game)" class="r-fav">Remove from Favorites</button>
+        </div>
+      </li>
+    </ul>
+  
+    <div *ngIf="favoriteGames.length === 0" class="n-f ">
+      <p>No favorite games added yet :(</p>
+    </div>
+  </div>
+  
