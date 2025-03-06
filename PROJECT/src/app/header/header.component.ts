@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, output } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login/login.service';
 
 @Component({
   selector: 'app-header',
@@ -8,22 +9,22 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.scss'
 })                           
 export class HeaderComponent implements OnInit{ 
-isLoggedIn: boolean = false;
+
 username:string |null='';
 
-constructor(private router:Router){}
+constructor(private router:Router, public loginServ:LoginService ){}
 
 ngOnInit(): void{
   this.updateLoginStatus();
 }
 updateLoginStatus() {
-  this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+this.loginServ.isLogin.set(localStorage.getItem('isLoggedIn') ==='true')
   this.username = localStorage.getItem('username');
 }
 logout() {
   localStorage.removeItem('isLoggedIn');
   localStorage.removeItem('username');
-  this.isLoggedIn = false;
+  this.loginServ.isLogin.set(false);
   this.username = '';
   this.router.navigate(['/login']);
 }

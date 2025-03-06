@@ -7,14 +7,14 @@
 
     <div class="logo"> 
       <div class="menu">
-      <a href="" routeLink="/home" class="home">home</a> 
-      <a href="" routerLink="/favorite" class="m-fav">favorite</a>
+      <a routerLink="/home" class="home">home</a> 
+      <a routerLink="/favorite" class="m-fav">favorite</a>
     </div>
      <img src="public/logo.jpg" alt="">
     </div>
    
-    <a *ngIf="!isLoggedIn" class="signup" routerLink="/register">Sign Up</a>
-    <li *ngIf="isLoggedIn" style="list-style: none;"><button class="l-out" (click)="logout()">Logout</button></li>
+    <a *ngIf="!loginServ.isLogin()" class="signup" routerLink="/register">Sign Up</a>
+    <li *ngIf="loginServ.isLogin()" style="list-style: none;"><button class="l-out" (click)="logout()">Logout</button></li>
   </header>
   
 

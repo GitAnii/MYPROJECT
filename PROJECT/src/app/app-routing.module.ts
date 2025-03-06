@@ -5,14 +5,14 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { GamepageComponent } from './gamepage/gamepage.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-const routes: Routes = [
-  {path:'', component:HomeComponent},
+const routes: Routes = [  
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
   {path: 'favorite', component:FavoriteComponent},
   {path: 'game/:id', component:GamepageComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+ 
   
 ];
 

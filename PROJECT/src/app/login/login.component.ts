@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'
+import { LoginService } from '../services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +12,12 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent {
   loginForm: FormGroup;
-
   loginEmail: string = '';
   loginPassword: string = '';
-
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  
+  
+  
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private loginService: LoginService) {
 
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -31,6 +33,7 @@ export class LoginComponent {
         password: this.loginPassword
       }
 
+      
       this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
         const user = users.find(u => u.email === credentials.email && u.password === credentials.password);
 
@@ -41,7 +44,8 @@ export class LoginComponent {
           localStorage.setItem('isLoggedIn', 'true');  
           localStorage.setItem('username', user.username);  
 
-
+           this.loginService.isLogin.set(true);
+           
           this.router.navigate(['/home']);
         } else {
           console.log('Invalid credentials');
@@ -55,4 +59,5 @@ export class LoginComponent {
       console.log('Please fill in all fields');
     }
   }
+  
 }

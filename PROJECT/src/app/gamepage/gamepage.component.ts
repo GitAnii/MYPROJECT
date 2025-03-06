@@ -30,6 +30,7 @@ export class GamepageComponent implements OnInit{
     // Avoid duplicates
     if (!favorites.some((fav: Game) => fav.id === game.id)) {
       favorites.push(game);
+      this.gameService.addToFavorites(game);
       localStorage.setItem('favorites', JSON.stringify(favorites));
     }
   }

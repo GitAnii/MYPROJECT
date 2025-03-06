@@ -19,6 +19,13 @@ h2{
     border: 1px solid white;
 
 }
+.r-c{
+    color: black;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+}
 .container{
     display: flex;
     justify-content: center;
