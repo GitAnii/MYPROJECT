@@ -14,7 +14,7 @@
     </div>
    
     <a *ngIf="!isLoggedIn" class="signup" routerLink="/register">Sign Up</a>
-    <li *ngIf="isLoggedIn"><button (click)="logout()">Logout</button></li>
+    <li *ngIf="isLoggedIn" style="list-style: none;"><button class="l-out" (click)="logout()">Logout</button></li>
   </header>
   
 

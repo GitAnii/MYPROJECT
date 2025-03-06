@@ -19,6 +19,23 @@ transition: color 0.2s;
 &:hover{
   color: #1e2341;
 }
+
+}
+.l-out{
+font-family: "Playwrite IT Moderna", cursive;
+font-size: 15px;
+color: white;
+width: 100px;
+height: 40px;
+background-color: #1e2341;
+border: 1px solid white;
+border-radius: 30px;
+transition: 0.3s;
+&:hover{
+  color:#1e2341 ;
+  background-color: white;
+}
+
 }
   .signup {
     text-align: center;
@@ -41,7 +58,9 @@ transition: color 0.2s;
      border-radius: 30px;
     }
   }
-  
+  .logout{
+    list-style: none;
+  }
 
   @media (max-width: 768px) {
     .container {
