@@ -7,8 +7,7 @@
         <label for="username" class="email"></label>
         <input id="username" formControlName="username" class="input" placeholder="username" type="text" />
         <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
-          <p *ngIf="registerForm.get('username')?.hasError('required')">Username is required.</p>
-          <p *ngIf="registerForm.get('username')?.hasError('minlength')">Username must be at least 3 characters long.</p>
+          
         </div>
       </div>
   <br>
@@ -16,8 +15,8 @@
         <label ></label>
         <input id="email"  placeholder="Email" class="input" formControlName="email" type="email" />
         <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
-          <p *ngIf="registerForm.get('email')?.hasError('required')">Email is required.</p>
-          <p *ngIf="registerForm.get('email')?.hasError('email')">Please enter a valid email address.</p>
+         
+        
         </div>
       </div>
   <br>
@@ -25,7 +24,6 @@
         <label for="password"></label>
         <input id="password" formControlName="password" class="input" placeholder="Password" type="password" />
         <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
-          <p *ngIf="registerForm.get('password')?.hasError('required')">Password is required.</p> 
           <p *ngIf="registerForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</p>
         </div>
       </div> 

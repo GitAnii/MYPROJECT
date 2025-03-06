@@ -37,19 +37,19 @@ export class LoginComponent {
         if (user) {
           console.log('Login successful', user);
 
-          // Store the username and login status in localStorage
-          localStorage.setItem('isLoggedIn', 'true');  // Mark as logged in
-          localStorage.setItem('username', user.username);  // Store username
+     
+          localStorage.setItem('isLoggedIn', 'true');  
+          localStorage.setItem('username', user.username);  
 
-          // Navigate to the home page after successful login
+
           this.router.navigate(['/home']);
         } else {
           console.log('Invalid credentials');
-          // Optionally, show an error message
+
         }
       }, error => {
         console.error('Error fetching users:', error);
-        // Optionally, handle the error here
+
       });
     } else {
       console.log('Please fill in all fields');
