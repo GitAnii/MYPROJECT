@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 import { LoginService } from '../services/login/login.service';
 
 @Component({
@@ -33,7 +33,6 @@ export class LoginComponent {
         password: this.loginPassword
       }
 
-      
       this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
         const user = users.find(u => u.email === credentials.email && u.password === credentials.password);
 
@@ -59,5 +58,8 @@ export class LoginComponent {
       console.log('Please fill in all fields');
     }
   }
-  
+  showPassword: boolean = false;
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 }
