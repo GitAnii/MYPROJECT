@@ -110,7 +110,7 @@ export class GameService {
   addToFavorites(game: Game): void {
     if (!this.favoriteGames.includes(game)) {
       this.favoriteGames.push(game);
-      game.favorite = true; 
+      game.favorite = true;
     }
   }
   getFavoriteGames(): Game[] {

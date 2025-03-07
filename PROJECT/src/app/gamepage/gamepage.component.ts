@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from '../services/game/game.service';
 import { Game } from '../shared/models/Game';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-gamepage',
@@ -13,21 +14,32 @@ export class GamepageComponent implements OnInit{
   game: Game | undefined;
   gameId: number | undefined;
   favoriteGames: Game[] = [];
+  isLoggedIn:boolean = false;
   constructor(
     private route: ActivatedRoute,
-    private gameService: GameService
+    private gameService: GameService,
+    private authService: AuthService, 
+    private router: Router 
   ) {}
 
   ngOnInit(): void {
 
     this.gameId = +this.route.snapshot.paramMap.get('id')!;
     this.game = this.gameService.getGameById(this.gameId);
+
+
+    this.isLoggedIn = this.authService.isLoggedIn();
+    
   }
   
   addToFavorites(game: Game): void {
+    if (!this.isLoggedIn) {
+      this.router.navigate(['/login']); ////ar mishvebs login pageze roca logout var
+      return;
+    }
+
     let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-    
-    // Avoid duplicates
+
     if (!favorites.some((fav: Game) => fav.id === game.id)) {
       favorites.push(game);
       this.gameService.addToFavorites(game);
@@ -35,7 +47,7 @@ export class GamepageComponent implements OnInit{
     }
   }
   removeFromFavorites(game: Game): void {
-    this.gameService.removeFromFavorites(game);  // Remove from the service
-    this.favoriteGames = this.gameService.getFavoriteGames();  // Update the local list
+    this.gameService.removeFromFavorites(game); 
+    this.favoriteGames = this.gameService.getFavoriteGames();  
   }
 }

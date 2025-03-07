@@ -1,24 +1,26 @@
 
 <div class="container">
-<div *ngIf="game">
-
+  <div *ngIf="game">
     <h2>{{ game.name }}</h2>  
     <div class="g-c">
-    <img [src]="game.imageUrl" alt="{{ game.name }}" class="c-image"/>
-    <div class="c-info">
-    <div class="price">
-      <span>{{ game.price | currency }}</span>
+      <img [src]="game.imageUrl" alt="{{ game.name }}" class="c-image"/>
+      <div class="c-info">
+        <div class="price">
+          <span>{{ game.price | currency }}</span>
+        </div>
+        <div class="category">
+          <span>{{ game.category }}</span>
+        </div>
+        <button 
+          (click)="addToFavorites(game)" 
+          class="add-f" 
+          [disabled]="!isLoggedIn">
+          {{ game.favorite ? 'Added to Favorites' : 'Add to Favorites'}}
+        </button>
+      </div>
     </div>
-    <div class="category">
-      <span>{{ game.category }}</span>
-    </div>
-    <button (click)="addToFavorites(game)" class="add-f">
-      {{ game.favorite ? 'Added to Favorites' : 'Add to Favorites'}}
-    </button>
-  </div>
   </div>
   <div *ngIf="!game">
     <p>Game not found.</p>
   </div>
-</div>
 </div>
