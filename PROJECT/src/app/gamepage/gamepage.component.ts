@@ -34,7 +34,7 @@ export class GamepageComponent implements OnInit{
   
   addToFavorites(game: Game): void {
     if (!this.isLoggedIn) {
-      this.router.navigate(['/login']); ////ar mishvebs login pageze roca logout var
+      this.router.navigate(['/login']); 
       return;
     }
 
